@@ -1,11 +1,12 @@
 import React, { useRef } from 'react';
+import { createSearchParams, useNavigate } from 'react-router-dom';
 // Import createSearchParams
 // Import useNavigate
 
 const Search = () => {
 
   // get navigate function
-  const navigate = "REPLACE ME";
+  const navigate = useNavigate();
 
   const searchInputRef = useRef();
 
@@ -17,9 +18,9 @@ const Search = () => {
     }
 
     // use createSearchParams 
-    const query = "REPLACE ME";
+    const query = createSearchParams(searchQuery);
 
-    // imperatively redirect with useNavigate() returned function
+    navigate(`/search?${query}`);
   };
 
   return (
